@@ -19,7 +19,7 @@ originalFreq = fftfreq(len(originalSignalTime), 0.25)
 
 amplitudeFreq = [nan]*len(originalSignalTime)
 for i in xrange(len(originalSignalFreq)):
-	amplitudeFreq [i] = originalSignalFreq[i].real**2 + originalSignalFreq[i].imag**2
+	amplitudeFreq[i] = sqrt(originalSignalFreq[i].real**2 + originalSignalFreq[i].imag**2)
 
 #filter
 B, A = signal.butter(2,[0.03,0.2],btype='bandpass')
