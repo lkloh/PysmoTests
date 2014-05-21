@@ -19,26 +19,22 @@ ax1.set_title('Amplitude vs Time')
 ofs = fft(ots)
 of = fftfreq(len(ots), 0.25)
 
-#filter
-order = 2
-lowFreq = 1.0
-highFreq = 1.5
-B, A = signal.butter(2,[0.5,1.0],btype='bandpass')
+am_freq = [nan]*len(ots)
+for i in xrange(len(ofs)):
+	am_freq[i] = ofs[i].real**2 + ofs[i].imag**2
 
-print A
+#filter
+B, A = signal.butter(2,[0.05,0.2],btype='bandpass')
 
 w, h = signal.freqz(B,A)
-# w, h = signal.freqs(B,A)
-ff = signal.lfilter(B,A,ofs)
-# 
-
-# print ff
+ff = signal.lfilter(B,A,am_freq)
 
 ax2 = fig.add_subplot(212)
-ax2.plot(of,ofs,label='Original')
+ax2.plot(of,am_freq,label='Original')
 ax2.plot(of,ff,label='Filtered')
+MULTIPLE = 0.7*max(am_freq)
+ax2.plot(w,MULTIPLE*h,label='Butter Filter')
 ax2.legend(loc="lower left")
-
 ax2.set_title('Amplitude Spectrum vs frequency')
 
 py.show()
