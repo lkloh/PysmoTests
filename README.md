@@ -3,6 +3,8 @@ FourierTransform
 
 Making a test fourier transform 
 
+.. image::result.png
+
 Libraries
 ---------
 * numpy
