@@ -11,7 +11,7 @@ fig = py.figure()
 fig.suptitle('FILTERING FREQUENCIES')
 
 # time -> frequency 
-# UNFILTERED
+# unfiltered
 originalSignalFreq = np.fft.fft(originalSignalTime)
 originalFreq = np.fft.fftfreq(len(originalSignalTime), 0.25)
 
@@ -23,12 +23,14 @@ filteredSignalTime = signal.lfilter(B,A,originalSignalTime)
 # convert filtered time signal -> frequency signal
 filteredSignalFreq = np.fft.fft(filteredSignalTime)
 
+# PLOT TIME
 ax1 = fig.add_subplot(211)
 ax1.plot(originalTime,originalSignalTime,label='Original')
 ax1.plot(originalTime,filteredSignalTime,label='Filtered')
 ax1.legend(loc="upper right")
 ax1.set_title('Amplitude vs Time')
 
+# PLOT FREQUENCY
 # in Hertz
 ax2 = fig.add_subplot(212)
 ax2.plot(originalFreq/(2*np.pi),np.abs(originalSignalFreq),label='Original')
