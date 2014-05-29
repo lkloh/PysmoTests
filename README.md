@@ -1,7 +1,7 @@
-FourierTransform
+PysmoTests
 ================
 
-Making a test fourier transform 
+Testing large functionality locally before moving it over to Pysmo
 
 Libraries
 ---------
