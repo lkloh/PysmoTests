@@ -12,3 +12,4 @@ for trace in stream:
 		os.makedirs('sac')
 	trace.write('sac/'+filename, format='SAC') 
 
+
