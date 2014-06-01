@@ -1,3 +1,5 @@
+# COPIED FROM HERE: http://stackoverflow.com/questions/16188420/python-tkinter-scrollbar-for-frame
+
 
 from Tkinter import *   # from x import * is bad practice
 from ttk import *
