@@ -4,6 +4,7 @@ class SetUp:
 
 	def __init__(self):
 		self.axes = self.getAxes()
+		show()
 
 	def getAxes(self):
 		fig = figure(figsize=(10,10))
@@ -14,9 +15,8 @@ class SetUp:
 		axs = {}
 		for i in range(10):
 			recti = [0.05, space*i, 0.10, 0.08]
-			self.fig.add_axes(recti)
-
-		show()
+			axs['button'+str(i)] = self.fig.add_axes(recti)
+		return axs
 
 def main():
 	setup = SetUp()
