@@ -12,7 +12,7 @@ class SetUp:
 
 		self.axs = self.addAxes()
 		self.bnquit = tk.Button(master, text='Quit', command=self.quitProgram)
-		self.bnquit.pack()
+		self.bnquit.pack(fill=tk.X)
 
 		dataPlot = FigureCanvasTkAgg(self.fig, master=master)
 		dataPlot.show()
