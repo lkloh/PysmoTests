@@ -1,7 +1,9 @@
 import matplotlib, sys
 matplotlib.use('TkAgg')
+# Qt4Agg
 from numpy import arange, sin, pi
 import matplotlib.pyplot as py
+# http://stackoverflow.com/questions/23167424/matplotlib-button-color-updates-only-after-moving-mouse
 
 class SetUp:
 
@@ -25,6 +27,7 @@ class SetUp:
 			self.bnquit.label.set_text('Hello')
 		else:
 			self.bnquit.label.set_text('Change')
+		self.fig.canvas.draw()
 
 def main():
 	setup = SetUp()
