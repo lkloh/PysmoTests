@@ -15,8 +15,8 @@ class SetUp:
 		self.bntext = py.Button(self.axs['text'], 'Text')
 		self.cidtext = self.bntext.on_clicked(self.texting)
 
-		self.bnquit = py.Button(self.axs['change'], 'Change')
-		self.cidquit = self.bnquit.on_clicked(self.changed)
+		self.bnchange= py.Button(self.axs['change'], 'Change')
+		self.cidchange = self.bnchange.on_clicked(self.changed)
 
 		py.show()
 
@@ -36,14 +36,14 @@ class SetUp:
 		return axs
 
 	def changed(self,event):
-		print self.bnquit.label.get_text()
-		if self.bnquit.label.get_text() == 'Change':
-			self.bnquit.label.set_text('Hello')
+		print self.bnchange.label.get_text()
+		if self.bnchange.label.get_text() == 'Change':
+			self.bnchange.label.set_text('Hello')
 			self.bntext.label.set_text('LOL')
 		else:
-			self.bnquit.label.set_text('Change')
-		#self.fig.canvas.draw()
-		self.axs['change'].get_figure().canvas.draw()
+			self.bnchange.label.set_text('Change')
+		print type(self.axs['text'])
+		event.canvas.blit(self.axs['text'].bbox)
 
 def main():
 	setup = SetUp()
