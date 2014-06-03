@@ -12,11 +12,11 @@ class SetUp:
 
 		self.axs = self.addAxes()
 
-		self.bntext = py.Button(self.axs['text'], 'Text')
-		self.cidtext = self.bntext.on_clicked(self.texting)
+		# self.bntext = py.Button(self.axs['text'], 'Text')
+		# self.cidtext = self.bntext.on_clicked(self.texting)
 
-		self.bnquit = py.Button(self.axs['change'], 'Change')
-		self.cidquit = self.bnquit.on_clicked(self.changed)
+		# self.bnquit = py.Button(self.axs['change'], 'Change')
+		# self.cidquit = self.bnquit.on_clicked(self.changed)
 
 		py.show()
 
@@ -29,10 +29,8 @@ class SetUp:
 
 	def addAxes(self):
 		axs = {}
-		rectchange = [0.20, 0.50, 0.20, 0.05]
-		axs['change'] = self.fig.add_axes(rectchange)
-		recttext = [0.20, 0.30, 0.20, 0.05]
-		axs['text'] = self.fig.add_axes(recttext)
+		ax1 = py.subplot2grid((2,2),(0, 0))
+		axs['ax1'] = ax1
 		return axs
 
 	def changed(self,event):
@@ -51,3 +49,10 @@ def main():
 
 if __name__ == "__main__":
 	main()
+
+
+
+
+
+
+
