@@ -20,7 +20,8 @@ class SetUp:
 		return axs
 
 	def changed(self,event):
-		if self.bnquit.label.text == 'Change':
+		print self.bnquit.label.get_text()
+		if self.bnquit.label.get_text() == 'Change':
 			self.bnquit.label.set_text('Hello')
 		else:
 			self.bnquit.label.set_text('Change')
