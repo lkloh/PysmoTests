@@ -79,6 +79,8 @@ Possible tweaks
     \item Make the intervals a bit smaller, $<60$ seconds. Need to experiment with this a bit.
     \item Replace (4) above with doing clustering on matrix $B$. Find the cluster in $s_i$ and $s_j$ that has the highest affinity, and set that to be $A_{ij}$. So, double clustering. 
     \item In (3), instead of covariance, other possible metrics are correlation. Other metrics are here: \url{http://docs.scipy.org/doc/scipy/reference/spatial.distance.html}
+
+	Try and transform the time signal data to frequency signal data, and do clustering on that instead. The closer the peaks and their intensity are, the higher the affinity.
 \end{itemize}
 
 

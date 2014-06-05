@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.4.8)  5 JUN 2014 16:07
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.4.8)  5 JUN 2014 16:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -271,11 +271,11 @@ Overfull \hbox (13.34575pt too wide) in paragraph at lines 81--82
 {/usr/local/texlive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 [2] (./suggestions.aux) ) 
 Here is how much of TeX's memory you used:
- 3508 strings out of 493308
- 54852 string characters out of 6137817
+ 3511 strings out of 493308
+ 54876 string characters out of 6137817
  141061 words of memory out of 5000000
  6849 multiletter control sequences out of 15000+600000
- 25378 words of font info for 92 fonts, out of 8000000 for 9000
+ 25537 words of font info for 94 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  38i,4n,35p,550b,220s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2013/texmf-dist/fonts/enc/dvips/cm
@@ -286,7 +286,7 @@ Here is how much of TeX's memory you used:
 pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/cm-super/sftt1095.pf
 b></usr/local/texlive/2013/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr
 /local/texlive/2013/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on suggestions.pdf (2 pages, 81528 bytes).
+Output written on suggestions.pdf (2 pages, 81886 bytes).
 PDF statistics:
  37 PDF objects out of 1000 (max. 8388607)
  26 compressed objects within 1 object stream
