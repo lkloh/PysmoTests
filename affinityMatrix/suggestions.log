@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.4.8)  5 JUN 2014 16:10
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.4.8)  5 JUN 2014 16:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -89,38 +89,80 @@ Package: wrapfig 2003/01/31  v 3.6
 \Urlmuskip=\muskip10
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-(/usr/local/texlive/2013/texmf-dist/tex/latex/psnfss/mathpazo.sty
-Package: mathpazo 2005/04/12 PSNFSS-v9.2a Palatino w/ Pazo Math (D.Puga, WaS) 
-\symupright=\mathgroup4
-)
-(/usr/local/texlive/2013/texmf-dist/tex/latex/base/fontenc.sty
-Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
+(/usr/local/texlive/2013/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2013/01/14 v2.14 AMS math features
+\@mathmargin=\skip44
 
-(/usr/local/texlive/2013/texmf-dist/tex/latex/base/t1enc.def
-File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
-LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2013/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks17
+\ex@=\dimen108
 ))
+(/usr/local/texlive/2013/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen109
+)
+(/usr/local/texlive/2013/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count91
+LaTeX Info: Redefining \frac on input line 210.
+\uproot@=\count92
+\leftroot@=\count93
+LaTeX Info: Redefining \overline on input line 306.
+\classnum@=\count94
+\DOTSCASE@=\count95
+LaTeX Info: Redefining \ldots on input line 378.
+LaTeX Info: Redefining \dots on input line 381.
+LaTeX Info: Redefining \cdots on input line 466.
+\Mathstrutbox@=\box27
+\strutbox@=\box28
+\big@size=\dimen110
+LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
+\macc@depth=\count96
+\c@MaxMatrixCols=\count97
+\dotsspace@=\muskip11
+\c@parentequation=\count98
+\dspbrk@lvl=\count99
+\tag@help=\toks18
+\row@=\count100
+\column@=\count101
+\maxfields@=\count102
+\andhelp@=\toks19
+\eqnshift@=\dimen111
+\alignsep@=\dimen112
+\tagshift@=\dimen113
+\tagwidth@=\dimen114
+\totwidth@=\dimen115
+\lineht@=\dimen116
+\@envbody=\toks20
+\multlinegap=\skip45
+\multlinetaggap=\skip46
+\mathdisplay@stack=\toks21
+LaTeX Info: Redefining \[ on input line 2665.
+LaTeX Info: Redefining \] on input line 2666.
+)
 (./suggestions.aux)
 \openout1 = `suggestions.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 59.
-LaTeX Font Info:    ... okay on input line 59.
-LaTeX Font Info:    Try loading font information for T1+ppl on input line 59.
-
-(/usr/local/texlive/2013/texmf-dist/tex/latex/psnfss/t1ppl.fd
-File: t1ppl.fd 2001/06/04 font definitions for T1/ppl.
-)
-LaTeX Info: Redefining \microtypecontext on input line 59.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 25.
+LaTeX Font Info:    ... okay on input line 25.
+LaTeX Info: Redefining \microtypecontext on input line 25.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -131,22 +173,23 @@ Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
 
-(/usr/local/texlive/2013/texmf-dist/tex/latex/microtype/mt-ppl.cfg
-File: mt-ppl.cfg 2005/11/16 v1.6 microtype config. file: Palatino (RS)
+(/usr/local/texlive/2013/texmf-dist/tex/latex/microtype/mt-cmr.cfg
+File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
+(RS)
 )
 (/usr/local/texlive/2013/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count91
-\scratchdimen=\dimen108
-\scratchbox=\box27
-\nofMPsegments=\count92
-\nofMParguments=\count93
-\everyMPshowfont=\toks17
-\MPscratchCnt=\count94
-\MPscratchDim=\dimen109
-\MPnumerator=\count95
-\makeMPintoPDFobject=\count96
-\everyMPtoPDFconversion=\toks18
+\scratchcounter=\count103
+\scratchdimen=\dimen117
+\scratchbox=\box29
+\nofMPsegments=\count104
+\nofMParguments=\count105
+\everyMPshowfont=\toks22
+\MPscratchCnt=\count106
+\MPscratchDim=\dimen118
+\MPnumerator=\count107
+\makeMPintoPDFobject=\count108
+\everyMPtoPDFconversion=\toks23
 ) (/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 )
@@ -195,75 +238,21 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-\big@size=\dimen110
-LaTeX Font Info:    Try loading font information for OT1+ppl on input line 66.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 46.
 
-(/usr/local/texlive/2013/texmf-dist/tex/latex/psnfss/ot1ppl.fd
-File: ot1ppl.fd 2001/06/04 font definitions for OT1/ppl.
+(/usr/local/texlive/2013/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    Try loading font information for OML+zplm on input line 66.
-
-
-(/usr/local/texlive/2013/texmf-dist/tex/latex/psnfss/omlzplm.fd
-File: omlzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OML/zplm.
-)
-LaTeX Font Info:    Try loading font information for OMS+zplm on input line 66.
-
-
-(/usr/local/texlive/2013/texmf-dist/tex/latex/psnfss/omszplm.fd
-File: omszplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMS/zplm.
-)
-LaTeX Font Info:    Try loading font information for OMX+zplm on input line 66.
-
-
-(/usr/local/texlive/2013/texmf-dist/tex/latex/psnfss/omxzplm.fd
-File: omxzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMX/zplm.
-)
-LaTeX Font Info:    Try loading font information for OT1+zplm on input line 66.
-
-
-(/usr/local/texlive/2013/texmf-dist/tex/latex/psnfss/ot1zplm.fd
-File: ot1zplm.fd 2002/09/08 Fontinst v1.914 font definitions for OT1/zplm.
-)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 46.
 Package microtype Info: Loading generic settings for font family
-(microtype)             `zplm' (encoding: OT1).
+(microtype)             `cmtt' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
-Overfull \hbox (186.99052pt too wide) in paragraph at lines 70--71
-\OMS/zplm/m/n/10.95 f\OML/zplm/m/it/10.95 t[]\OT1/ppl/m/n/10.95 (-20) , [] , \O
-ML/zplm/m/it/10.95 t[]\OMS/zplm/m/n/10.95 g\OT1/ppl/m/n/10.95 (-20) , \OMS/zplm
-/m/n/10.95 f\OML/zplm/m/it/10.95 t[]\OT1/ppl/m/n/10.95 (-20) , [] , \OML/zplm/m
-/it/10.95 t[]\OMS/zplm/m/n/10.95 g\OT1/ppl/m/n/10.95 (-20) , [] , \OMS/zplm/m/n
-/10.95 f\OML/zplm/m/it/10.95 t[]\OT1/ppl/m/n/10.95 (-20) , [] , \OML/zplm/m/it/
-10.95 t[]\OMS/zplm/m/n/10.95 g$ \T1/ppl/m/n/10.95 (-20) in $\OML/zplm/m/it/10.9
-5 s[]$ \T1/ppl/m/n/10.95 (-20) and $\OMS/zplm/m/n/10.95 f\OML/zplm/m/it/10.95 t
-[]\OT1/ppl/m/n/10.95 (-20) , [] , \OML/zplm/m/it/10.95 t[]\OMS/zplm/m/n/10.95 g
-\OT1/ppl/m/n/10.95 (-20) , \OMS/zplm/m/n/10.95 f\OML/zplm/m/it/10.95 t[]\OT1/pp
-l/m/n/10.95 (-20) , [] , \OML/zplm/m/it/10.95 t[]\OMS/zplm/m/n/10.95 g\OT1/ppl/
-m/n/10.95 (-20) , [] , \OMS/zplm/m/n/10.95 f\OML/zplm/m/it/10.95 t[]\OT1/ppl/m/
-n/10.95 (-20) , [] , \OML/zplm/m/it/10.95 t[]\OMS/zplm/m/n/10.95 g$
- []
-
-LaTeX Font Info:    Try loading font information for OMS+ppl on input line 79.
-(/usr/local/texlive/2013/texmf-dist/tex/latex/psnfss/omsppl.fd
-File: omsppl.fd 
-)
-LaTeX Font Info:    Font shape `OMS/ppl/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 79.
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 81.
-
-(/usr/local/texlive/2013/texmf-dist/tex/latex/base/t1cmtt.fd
-File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
-)
-Package microtype Info: Loading generic settings for font family
-(microtype)             `cmtt' (encoding: T1).
-(microtype)             For optimal results, create family-specific settings.
-(microtype)             See the microtype manual for details.
-
-Overfull \hbox (13.34575pt too wide) in paragraph at lines 81--82
-\T1/ppl/m/n/10.95 (-20) Other met-rics are here: $\T1/cmtt/m/n/10.95 http : / /
- docs . scipy . org / doc / scipy / reference /
+Overfull \hbox (17.77505pt too wide) in paragraph at lines 50--51
+\OT1/cmr/m/n/10.95 (-20) Other met-rics are here: $\OT1/cmtt/m/n/10.95 http : /
+ / docs . scipy . org / doc / scipy / reference /
  []
 
 [1
@@ -271,25 +260,30 @@ Overfull \hbox (13.34575pt too wide) in paragraph at lines 81--82
 {/usr/local/texlive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 [2] (./suggestions.aux) ) 
 Here is how much of TeX's memory you used:
- 3511 strings out of 493308
- 54876 string characters out of 6137817
- 141061 words of memory out of 5000000
- 6849 multiletter control sequences out of 15000+600000
- 25537 words of font info for 94 fonts, out of 8000000 for 9000
+ 3760 strings out of 493308
+ 56522 string characters out of 6137817
+ 156111 words of memory out of 5000000
+ 7163 multiletter control sequences out of 15000+600000
+ 9819 words of font info for 45 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 38i,4n,35p,550b,220s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2013/texmf-dist/fonts/enc/dvips/cm
--super/cm-super-t1.enc}{/usr/local/texlive/2013/texmf-dist/fonts/enc/dvips/base
-/8r.enc}</usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi
-10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10
-.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.
-pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/cm-super/sftt1095.pf
-b></usr/local/texlive/2013/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr
-/local/texlive/2013/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on suggestions.pdf (2 pages, 81886 bytes).
+ 38i,6n,35p,501b,218s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2013/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmmi10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmmi6.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmmi8.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmr10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmr12.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmr17.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmr6.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+r8.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy1
+0.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.
+pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.p
+fb>
+Output written on suggestions.pdf (2 pages, 121212 bytes).
 PDF statistics:
- 37 PDF objects out of 1000 (max. 8388607)
- 26 compressed objects within 1 object stream
+ 59 PDF objects out of 1000 (max. 8388607)
+ 42 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 13825 words of extra memory for PDF output out of 14400 (max. 10000000)
+ 7169 words of extra memory for PDF output out of 10000 (max. 10000000)
 
