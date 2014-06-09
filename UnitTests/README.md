@@ -1,0 +1,1 @@
+Most stuff here is plaguerized from http://www.openp2p.com/pub/a/python/2004/12/02/tdd_pyunit.html
