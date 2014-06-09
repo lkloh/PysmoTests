@@ -6,8 +6,8 @@ class FooTests(unittest.TestCase):
 
 	def testMatches(self):
 		p = DatePattern(2014, 9, 28)
-		d = datetime.date(2014, 9, 28)
-		self.failUnless(p.matches(d))
+		d = datetime.date(2014, 9, 29)
+		self.failIf(p.matches(d))
 
 def main():
 	unittest.main()

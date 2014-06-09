@@ -1,7 +1,9 @@
+import datetime
+
 class DatePattern:
 
 	def __init__(self, year, month, day):
-		pass
+		self.date = datetime.date(year, month, day)
 
 	def matches(self, date):
-		return True
+		return self.date == date
