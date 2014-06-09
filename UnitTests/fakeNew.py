@@ -1,9 +1,13 @@
 import unittest
+from moreClasses import DatePattern
+import datetime
 
 class FooTests(unittest.TestCase):
 
-	def testFoo(self):
-		self.failUnless(False)
+	def testMatches(self):
+		p = DatePattern(2014, 9, 28)
+		d = datetime.date(2014, 9, 28)
+		self.failUnless(p.matches(d))
 
 def main():
 	unittest.main()
