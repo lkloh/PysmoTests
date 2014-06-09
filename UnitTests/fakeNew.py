@@ -14,6 +14,11 @@ class FooTests(unittest.TestCase):
 		d = datetime.date(2014, 9, 28)
 		self.failUnless(p.matches(d))
 
+	def testMatchesYearAsWildCard(self):
+		p = DatePattern(0, 4, 10)
+		d = datetime.date(2005, 4, 10)
+		self.failUnless(p.matches(d))
+
 def main():
 	unittest.main()
 
