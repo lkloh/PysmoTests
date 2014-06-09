@@ -19,6 +19,16 @@ class FooTests(unittest.TestCase):
 		d = datetime.date(2005, 4, 10)
 		self.failUnless(p.matches(d))
 
+	def testMatchesYearAndMonthAsWildcards(self):
+		p = DatePattern(0,0,1)
+		d = datetime.date(2004,10,1)
+		self.failUnless(p.matches(d))
+
+	def testMatchesWeekday(self):
+		p = DatePattern(0,0,0,2) #2 is wednesday
+		d = datetime.date(2004,9,29)
+		self.failUnless(p.matches(d))
+
 def main():
 	unittest.main()
 
