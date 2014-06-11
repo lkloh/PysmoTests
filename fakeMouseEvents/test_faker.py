@@ -31,6 +31,7 @@ class AcceptanceTests(unittest.TestCase):
 
 def main():
 	unittest.main()
+	py.close('all')
 
 if __name__ == '__main__':
 	main()
