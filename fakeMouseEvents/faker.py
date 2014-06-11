@@ -18,7 +18,12 @@ class SetUp:
 		self.bnchange= py.Button(self.axs['change'], 'Change')
 		self.cidchange = self.bnchange.on_clicked(self.changed)
 
+		cidpress = self.fig.canvas.mpl_connect('key_press_event', self.on_key)
+
 		py.show()
+
+	def on_key(self, event):
+		print 'YOLOSWAG'
 
 	def texting(self, event):
 		print self.bntext.label.get_text()
