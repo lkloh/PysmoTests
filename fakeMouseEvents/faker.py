@@ -28,6 +28,9 @@ class SetUp:
 		self.cidchange = self.bnchange.on_clicked(self.changed)
 		self.cidpress = self.fig.canvas.mpl_connect('key_press_event', self.on_key)
 
+	def addStuff(self, numA, numB):
+		return numA + numB
+
 	def on_key(self, event):
 		print event.key
 		if (event.key == 'H'):
