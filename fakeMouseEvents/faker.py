@@ -8,22 +8,30 @@ import matplotlib.pyplot as py
 class SetUp:
 
 	def __init__(self):
-		self.fig = py.figure(figsize=(5,5))
-
-		self.axs = self.addAxes()
-
-		self.bntext = py.Button(self.axs['text'], 'Text')
-		self.cidtext = self.bntext.on_clicked(self.texting)
-
-		self.bnchange= py.Button(self.axs['change'], 'Change')
-		self.cidchange = self.bnchange.on_clicked(self.changed)
-
-		cidpress = self.fig.canvas.mpl_connect('key_press_event', self.on_key)
-
+		fig, axs = self.setFigure()
+		self.fig = fig
+		self.axs = axs
+		self.connect()
 		py.show()
 
+	def setFigure(self):
+		fig = py.figure(figsize=(5,5))
+		axs = self.addAxes(fig)
+
+		self.bntext = py.Button(axs['text'], 'Text')
+		self.bnchange= py.Button(axs['change'], 'Change')
+		
+		return fig, axs
+
+	def connect(self):
+		self.cidtext = self.bntext.on_clicked(self.texting)
+		self.cidchange = self.bnchange.on_clicked(self.changed)
+		self.cidpress = self.fig.canvas.mpl_connect('key_press_event', self.on_key)
+
 	def on_key(self, event):
-		print 'YOLOSWAG'
+		print event.key
+		if (event.key == 'H'):
+			print 'YOLOSWAG'
 
 	def texting(self, event):
 		print self.bntext.label.get_text()
@@ -32,12 +40,12 @@ class SetUp:
 		else:
 			self.bntext.label.set_text('Text')
 
-	def addAxes(self):
+	def addAxes(self, fig):
 		axs = {}
 		rectchange = [0.20, 0.50, 0.20, 0.05]
-		axs['change'] = self.fig.add_axes(rectchange)
+		axs['change'] = fig.add_axes(rectchange)
 		recttext = [0.20, 0.30, 0.20, 0.05]
-		axs['text'] = self.fig.add_axes(recttext)
+		axs['text'] = fig.add_axes(recttext)
 		return axs
 
 	def changed(self,event):
