@@ -1,13 +1,11 @@
 import unittest
-from pymouse import PyMouse
-from pykeyboard import PyKeyboard
 from faker import SetUp
 import matplotlib
 import matplotlib.pyplot as py
 import Tkinter
 
-m = PyMouse()
-k = PyKeyboard()
+# m = PyMouse()
+# k = PyKeyboard()
 instance = SetUp()
 
 class AcceptanceTests(unittest.TestCase):
@@ -30,7 +28,7 @@ class AcceptanceTests(unittest.TestCase):
 
 def main():
 	unittest.main()
-	py.close('all')
 
 if __name__ == '__main__':
 	main()
+	py.close('all')
