@@ -36,7 +36,6 @@ class SetUp:
 			print 'YOLOSWAG'
 
 	def texting(self, event):
-		print self.bntext.label.get_text()
 		if self.bntext.label.get_text() == 'Text':
 			self.bntext.label.set_text('LOL')
 		else:

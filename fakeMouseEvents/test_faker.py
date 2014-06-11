@@ -6,28 +6,21 @@ import matplotlib
 import matplotlib.pyplot as py
 import Tkinter
 
+m = PyMouse()
+k = PyKeyboard()
+instance = SetUp()
+
 class AcceptanceTests(unittest.TestCase):
 
-	def AtestMatchesWeekday(self):
-		m = PyMouse()
-		k = PyKeyboard()
-
-		instance = SetUp()
-		result = SetUp.addStuff(instance, 3,4)
-		print result
-		k.press_key('H')
-		py.close()
-		self.assertTrue(1==1)
-
-	def test_fakeEvent(self):
-		m = PyMouse()
-		k = PyKeyboard()
-		
-		instance = SetUp()
+	# key event
+	def test_fakeEvent(self):	
 		fake_event = matplotlib.backend_bases.Event('KeyEvent', instance.fig, Tkinter.Event)
 		fake_event.key = 'H'
 		SetUp.on_key(instance, fake_event)
 
+	def test_clickingTextingBtn(self):
+		fake_event = matplotlib.backend_bases.MouseEvent('button_press_event', instance.fig, 123, 129)
+		SetUp.texting(instance, fake_event)
 
 def main():
 	unittest.main()
