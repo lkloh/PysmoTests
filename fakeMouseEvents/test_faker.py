@@ -19,7 +19,7 @@ class AcceptanceTests(unittest.TestCase):
 		SetUp.on_key(instance, fake_event)
 
 	def test_clickingTextingBtn(self):
-		fake_event = matplotlib.backend_bases.MouseEvent('button_press_event', instance.fig, 123, 129)
+		fake_event = matplotlib.backend_bases.MouseEvent('button_press_event', instance.fig.canvas, 123, 129)
 		SetUp.texting(instance, fake_event)
 
 def main():
