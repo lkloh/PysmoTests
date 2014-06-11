@@ -21,6 +21,12 @@ class AcceptanceTests(unittest.TestCase):
 	def test_clickingTextingBtn(self):
 		fake_event = matplotlib.backend_bases.MouseEvent('button_press_event', instance.fig.canvas, 123, 129)
 		SetUp.texting(instance, fake_event)
+		if instance.bntext.label.get_text() == 'Text':
+			SetUp.texting(instance, fake_event)
+			self.assertTrue(instance.bntext.label.get_text(),'LOL')
+		else:
+			SetUp.texting(instance, fake_event)
+			self.assertTrue(instance.bntext.label.get_text(),'Text')
 
 def main():
 	unittest.main()
