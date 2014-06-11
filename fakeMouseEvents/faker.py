@@ -32,7 +32,7 @@ class SetUp:
 		return numA + numB
 
 	def on_key(self, event):
-		print event.key
+		print event.guiEvent
 		if (event.key == 'H'):
 			print 'YOLOSWAG'
 
