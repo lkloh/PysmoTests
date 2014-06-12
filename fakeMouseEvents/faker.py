@@ -22,6 +22,7 @@ class SetUp:
 		self.bntext = py.Button(axs['text'], 'Text')
 		self.bnchange= py.Button(axs['change'], 'Change')
 		self.bnband = RadioButtons(axs['band'], ('low','high','double'))
+		self.bnbandlabel = py.Button(axs['band_label'], 'low')
 		
 		return fig, axs
 
@@ -29,6 +30,11 @@ class SetUp:
 		self.cidtext = self.bntext.on_clicked(self.texting)
 		self.cidchange = self.bnchange.on_clicked(self.changed)
 		self.cidpress = self.fig.canvas.mpl_connect('key_press_event', self.on_key)
+		self.cidband = self.bnband.on_clicked(self.getBand)
+
+	def getBand(self, event):
+		self.bnbandlabel.label.set_text(event)
+		self.fig.canvas.draw()
 
 	def addStuff(self, numA, numB):
 		return numA + numB
@@ -45,12 +51,20 @@ class SetUp:
 
 	def addAxes(self, fig):
 		axs = {}
+
+		# buttons
 		rectchange = [0.20, 0.50, 0.20, 0.05]
 		axs['change'] = fig.add_axes(rectchange)
 		recttext = [0.20, 0.30, 0.20, 0.05]
 		axs['text'] = fig.add_axes(recttext)
 		rectband = [0.50, 0.40, 0.30, 0.25]
 		axs['band'] = fig.add_axes(rectband)
+
+		# label
+		rect_lband = [0.50, 0.70, 0.30, 0.05]
+		axs['band_label'] = fig.add_axes(rect_lband)
+
+
 		return axs
 
 	def changed(self,event):
