@@ -23,6 +23,7 @@ class AcceptanceTests(unittest.TestCase):
 			self.assertTrue(instance.bntext.label.get_text(),'Text')
 
 	def test_radioBtn(self):
+		self.assertNotEqual(instance.bnBandLabel.label.get_text(), 'high')
 		SetUp.getBand(instance, 'high')
 		self.assertEqual(instance.bnBandLabel.label.get_text(), 'high')
 
