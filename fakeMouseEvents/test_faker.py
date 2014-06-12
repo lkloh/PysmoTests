@@ -1,18 +1,18 @@
 import unittest
 
 import matplotlib
-#matplotlib.use('TkAgg')
+matplotlib.use('TkAgg')
 
 from faker import SetUp
 import matplotlib.pyplot as py
-import Tkinter
+import Tkinter as tk
 
 instance = SetUp()
 
 class AcceptanceTests(unittest.TestCase):
 
 	def test_keyEvent(self):	
-		fake_event = matplotlib.backend_bases.Event('KeyEvent', instance.fig, Tkinter.Event)
+		fake_event = matplotlib.backend_bases.Event('KeyEvent', instance.fig)
 		fake_event.key = 'H'
 		SetUp.on_key(instance, fake_event)
 
@@ -27,6 +27,9 @@ class AcceptanceTests(unittest.TestCase):
 
 	def test_radioBtn(self):
 		self.assertNotEqual(instance.bnBandLabel.label.get_text(), 'high')
+
+		#SetUp.getBand(instance, 'high')
+		#self.assertEqual(instance.bnBandLabel.label.get_text(), 'high')
 		SetUp.getBand(instance, 'high')
 		self.assertEqual(instance.bnBandLabel.label.get_text(), 'high')
 
