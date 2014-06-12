@@ -2,6 +2,7 @@ import unittest
 
 import matplotlib
 matplotlib.use('TkAgg')
+from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 
 from faker import SetUp
 import matplotlib.pyplot as py
@@ -28,8 +29,6 @@ class AcceptanceTests(unittest.TestCase):
 	def test_radioBtn(self):
 		self.assertNotEqual(instance.bnBandLabel.label.get_text(), 'high')
 
-		#SetUp.getBand(instance, 'high')
-		#self.assertEqual(instance.bnBandLabel.label.get_text(), 'high')
 		SetUp.getBand(instance, 'high')
 		self.assertEqual(instance.bnBandLabel.label.get_text(), 'high')
 
