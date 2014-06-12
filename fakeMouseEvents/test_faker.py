@@ -1,7 +1,7 @@
 import unittest
 
 import matplotlib
-matplotlib.use('TkAgg')
+#matplotlib.use('TkAgg')
 
 from faker import SetUp
 import matplotlib.pyplot as py

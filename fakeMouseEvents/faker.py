@@ -1,5 +1,5 @@
 import matplotlib, sys
-matplotlib.use('TkAgg')
+#matplotlib.use('TkAgg')
 # Qt4Agg
 from numpy import arange, sin, pi
 import matplotlib.pyplot as py
@@ -34,6 +34,7 @@ class SetUp:
 		self.cidband = self.bnband.on_clicked(self.getBand)
 
 	def getBand(self, event):
+		print 'Ducks want food!'
 		self.bnBandLabel.label.set_text(event)
 		self.fig.canvas.draw()
 
