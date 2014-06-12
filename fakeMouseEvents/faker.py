@@ -22,7 +22,8 @@ class SetUp:
 		self.bntext = py.Button(axs['text'], 'Text')
 		self.bnchange= py.Button(axs['change'], 'Change')
 		self.bnband = RadioButtons(axs['band'], ('low','high','double'))
-		self.bnbandlabel = py.Button(axs['band_label'], 'low')
+
+		self.bnBandLabel = py.Button(axs['band_label'], 'low')
 		
 		return fig, axs
 
@@ -33,8 +34,7 @@ class SetUp:
 		self.cidband = self.bnband.on_clicked(self.getBand)
 
 	def getBand(self, event):
-		self.bnbandlabel.label.set_text(event)
-		self.fig.canvas.draw()
+		self.bnBandLabel.label.set_text(event)
 
 	def addStuff(self, numA, numB):
 		return numA + numB
