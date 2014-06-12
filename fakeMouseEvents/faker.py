@@ -35,6 +35,7 @@ class SetUp:
 
 	def getBand(self, event):
 		self.bnBandLabel.label.set_text(event)
+		self.fig.canvas.draw()
 
 	def addStuff(self, numA, numB):
 		return numA + numB
@@ -64,18 +65,14 @@ class SetUp:
 		rect_lband = [0.50, 0.70, 0.30, 0.05]
 		axs['band_label'] = fig.add_axes(rect_lband)
 
-
 		return axs
 
 	def changed(self,event):
-		print self.bnchange.label.get_text()
 		if self.bnchange.label.get_text() == 'Change':
 			self.bnchange.label.set_text('Hello')
 			self.bntext.label.set_text('LOL')
 		else:
 			self.bnchange.label.set_text('Change')
-		print type(self.axs['text'])
-		event.canvas.blit(self.axs['text'].bbox)
 
 def main():
 	setup = SetUp()
