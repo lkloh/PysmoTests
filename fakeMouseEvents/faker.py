@@ -3,6 +3,7 @@ matplotlib.use('TkAgg')
 # Qt4Agg
 from numpy import arange, sin, pi
 import matplotlib.pyplot as py
+from matplotlib.widgets import RadioButtons
 # http://stackoverflow.com/questions/23167424/matplotlib-button-color-updates-only-after-moving-mouse
 
 class SetUp:
@@ -20,6 +21,7 @@ class SetUp:
 
 		self.bntext = py.Button(axs['text'], 'Text')
 		self.bnchange= py.Button(axs['change'], 'Change')
+		self.bnband = RadioButtons(axs['band'], ('low','high','double'))
 		
 		return fig, axs
 
@@ -47,6 +49,8 @@ class SetUp:
 		axs['change'] = fig.add_axes(rectchange)
 		recttext = [0.20, 0.30, 0.20, 0.05]
 		axs['text'] = fig.add_axes(recttext)
+		rectband = [0.50, 0.40, 0.30, 0.25]
+		axs['band'] = fig.add_axes(rectband)
 		return axs
 
 	def changed(self,event):
