@@ -35,10 +35,11 @@ class SetUp:
 		self.cidpress = self.fig.canvas.mpl_connect('key_press_event', self.on_key)
 		self.cidband = self.bnband.on_clicked(self.getBand)
 
-		span = SpanSelector(self.axs['span_axs'], self.onselect, 'horizontal')
+		span = SpanSelector(self.subpy, self.onselect, 'horizontal')
 
 	def onselect(vmin, vmax):
 		print vmin, vmax
+		print 'lol'
 
 	def getBand(self, event):
 		print 'Ducks want food!'
@@ -74,7 +75,8 @@ class SetUp:
 		axs['band_label'] = fig.add_axes(rect_lband)
 
 		#span
-		axs['span_axs'] = fig.add_axes([0.1,0.60, 0.80, 0.35])
+		self.subpy = py.subplot(111)
+		self.subpy.plot([1,2,3,4,5],[6,7,8,9,10])
 
 		return axs
 
