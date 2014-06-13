@@ -8,7 +8,8 @@ from new_one import onselect
 class AcceptanceTests(unittest.TestCase):
 
 	def test_select(self):	
-		pass
+		onselect(2.9,3.5)
+		
 
 def main():
 	unittest.main()

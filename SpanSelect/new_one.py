@@ -4,8 +4,8 @@ detail view of the selected region in the lower axes
 copied from http://stackoverflow.com/questions/16947704/graphics-issues-when-combining-matplotlib-widgets-spanselector-cursor-fill-be
 """
 import numpy as np
-import matplotlib
-matplotlib.use('TkAgg')
+# import matplotlib
+# matplotlib.use('TkAgg')
 
 import matplotlib.pyplot as plt
 from matplotlib.widgets import SpanSelector
@@ -16,7 +16,6 @@ Fig.set_facecolor('w')
 Fig.set
 Ax = Fig.add_subplot(211)
 
-print type(Ax)
 
 x = np.arange(0.0, 5.0, 0.01)
 y = np.sin(2*np.pi*x) + 0.5*np.random.randn(len(x))
@@ -36,6 +35,8 @@ def onselect(xmin, xmax):
         Ax.fill_between(x[:], 0.0, y[:],facecolor='White',alpha=1)
         del RegionIndices[:]
 
+    print 'THE PARAMETER'
+    print xmin, xmax
 
     indmin, indmax = np.searchsorted(x, (xmin, xmax))
     indmax = min(len(x)-1, indmax)
@@ -48,9 +49,7 @@ def onselect(xmin, xmax):
     ax2.set_xlim(thisx[0], thisx[-1])
     ax2.set_ylim(thisy.min(), thisy.max())
 
-    # where the limits are set to
-    print thisx[0], thisx[-1]
-    
+
     Fig.canvas.draw()
 
     RegionIndices.append(xmin)
