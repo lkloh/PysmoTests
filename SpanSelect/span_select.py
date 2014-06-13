@@ -61,12 +61,15 @@ class SetUp:
 		axs['change'] = fig.add_axes(rectchange)
 		recttext = [0.20, 0.30, 0.20, 0.05]
 		axs['text'] = fig.add_axes(recttext)
-		rectband = [0.50, 0.40, 0.30, 0.25]
+		rectband = [0.50, 0.15, 0.30, 0.25]
 		axs['band'] = fig.add_axes(rectband)
 
 		# label
-		rect_lband = [0.50, 0.70, 0.30, 0.05]
+		rect_lband = [0.50, 0.05, 0.30, 0.05]
 		axs['band_label'] = fig.add_axes(rect_lband)
+
+		#span
+		axs['span_axs'] = fig.add_axes([0.1,0.60, 0.80, 0.35])
 
 		return axs
 
