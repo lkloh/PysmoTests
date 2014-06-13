@@ -1,5 +1,5 @@
 import matplotlib, sys
-#matplotlib.use('TkAgg')
+matplotlib.use('TkAgg')
 
 
 # Qt4Agg
