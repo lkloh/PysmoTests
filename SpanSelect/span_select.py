@@ -1,5 +1,5 @@
 import matplotlib, sys
-matplotlib.use('TkAgg')
+#matplotlib.use('TkAgg')
 
 
 # Qt4Agg
@@ -11,81 +11,29 @@ from matplotlib.widgets import RadioButtons, SpanSelector
 class SetUp:
 
 	def __init__(self):
-		fig, axs = self.setFigure()
-		self.fig = fig
-		self.axs = axs
+		fig = self.setFigure()
 		self.connect()
 		py.show()
+
+	def connect(self):
+		def onselect(xmin, xmax):
+			print 'LOL'
+		span = SpanSelector(self.subpy, onselect, 'horizontal')
 
 	def setFigure(self):
 		fig = py.figure(figsize=(5,5))
 		axs = self.addAxes(fig)
-
-		self.bntext = py.Button(axs['text'], 'Text')
-		self.bnchange= py.Button(axs['change'], 'Change')
-		self.bnband = RadioButtons(axs['band'], ('low','high','double'))
-
-		self.bnBandLabel = py.Button(axs['band_label'], 'low')
-		
-		return fig, axs
-
-	def connect(self):
-		self.cidtext = self.bntext.on_clicked(self.texting)
-		self.cidchange = self.bnchange.on_clicked(self.changed)
-		self.cidpress = self.fig.canvas.mpl_connect('key_press_event', self.on_key)
-		self.cidband = self.bnband.on_clicked(self.getBand)
-
-		span = SpanSelector(self.subpy, self.onselect, 'horizontal')
-
-	def onselect(vmin, vmax):
-		print vmin, vmax
-		print 'lol'
-
-	def getBand(self, event):
-		print 'Ducks want food!'
-		self.bnBandLabel.label.set_text(event)
-		self.fig.canvas.draw()
-
-	def addStuff(self, numA, numB):
-		return numA + numB
-
-	def on_key(self, event):
-		if (event.key == 'H'):
-			print 'YOLOSWAG'
-
-	def texting(self, event):
-		if self.bntext.label.get_text() == 'Text':
-			self.bntext.label.set_text('LOL')
-		else:
-			self.bntext.label.set_text('Text')
+		self.axs = axs
+		return fig
 
 	def addAxes(self, fig):
 		axs = {}
-
-		# buttons
-		rectchange = [0.20, 0.50, 0.20, 0.05]
-		axs['change'] = fig.add_axes(rectchange)
-		recttext = [0.20, 0.30, 0.20, 0.05]
-		axs['text'] = fig.add_axes(recttext)
-		rectband = [0.50, 0.15, 0.30, 0.25]
-		axs['band'] = fig.add_axes(rectband)
-
-		# label
-		rect_lband = [0.50, 0.05, 0.30, 0.05]
-		axs['band_label'] = fig.add_axes(rect_lband)
 
 		#span
 		self.subpy = py.subplot(111)
 		self.subpy.plot([1,2,3,4,5],[6,7,8,9,10])
 
 		return axs
-
-	def changed(self,event):
-		if self.bnchange.label.get_text() == 'Change':
-			self.bnchange.label.set_text('Hello')
-			self.bntext.label.set_text('LOL')
-		else:
-			self.bnchange.label.set_text('Change')
 
 def main():
 	setup = SetUp()
