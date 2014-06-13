@@ -1,51 +1,58 @@
+"""
+The SpanSelector is a mouse widget to select a xmin/xmax range and plot the
+detail view of the selected region in the lower axes
+copied from http://stackoverflow.com/questions/16947704/graphics-issues-when-combining-matplotlib-widgets-spanselector-cursor-fill-be
+"""
 import numpy as np
+import matplotlib
+matplotlib.use('TkAgg')
+
 import matplotlib.pyplot as plt
 from matplotlib.widgets import SpanSelector
+import matplotlib.widgets as widgets
 
-def onselectPeak(xmin, xmax):
+Fig = plt.figure(figsize=(8,6))
+Fig.set_facecolor('w')
+Fig.set
+Ax = Fig.add_subplot(211)
+
+
+x = np.arange(0.0, 5.0, 0.01)
+y = np.sin(2*np.pi*x) + 0.5*np.random.randn(len(x))
+
+Ax.plot(x, y, '-')
+Ax.set_ylim(-2,2)
+Ax.set_title('Press left mouse button and drag to test')
+
+RegionIndices = []
+
+ax2 = Fig.add_subplot(212)
+line2, = ax2.plot(x, y, '-')
+
+
+def onselect(xmin, xmax):
+    if len(RegionIndices) == 2:
+        Ax.fill_between(x[:], 0.0, y[:],facecolor='White',alpha=1)
+        del RegionIndices[:]
+
+
     indmin, indmax = np.searchsorted(x, (xmin, xmax))
     indmax = min(len(x)-1, indmax)
-    print "Xmin " + str(indmin) + " at index " + str(indmin)
-    print "Xmax " + str(indmax) + " at index " + str(indmax)
-    ax.fill_between(x[indmin:indmax], -1.0, y[indmin:indmax],facecolor='Red',alpha=0.5)
 
-def onselectLeftContinuum(xmin, xmax):
-    indmin, indmax = np.searchsorted(x, (xmin, xmax))
-    indmax = min(len(x)-1, indmax)
-    print "Leftmin " + str(indmin) + " at index " + str(indmin)
-    print "Leftmax " + str(indmax) + " at index " + str(indmax)
-    ax.fill_between(x[indmin:indmax], -1.0, y[indmin:indmax],facecolor='Blue',alpha=0.5)
+    Ax.fill_between(x[indmin:indmax], 0.0, y[indmin:indmax],facecolor='Blue',alpha=0.30)
 
-def onselectRightContinuum(xmin, xmax):
-    indmin, indmax = np.searchsorted(x, (xmin, xmax))
-    indmax = min(len(x)-1, indmax)
-    print "Xmin " + str(indmin) + " at index " + str(indmin)
-    print "Xmax " + str(indmax) + " at index " + str(indmax)
-    ax.fill_between(x[indmin:indmax], -1.0, y[indmin:indmax],facecolor='Blue',alpha=0.5)
+    thisx = x[indmin:indmax]
+    thisy = y[indmin:indmax]
+    line2.set_data(thisx, thisy)
+    ax2.set_xlim(thisx[0], thisx[-1])
+    ax2.set_ylim(thisy.min(), thisy.max())
+    Fig.canvas.draw()
 
-fig = plt.figure(figsize=(8,6))
-ax = fig.add_subplot(111, axisbg='#FFFFCC')
+    RegionIndices.append(xmin)
+    RegionIndices.append(xmax)
 
-x = np.arange(0.0, 10.0, 1.0)
-y = [0.0,0.0,0.0,0.0,5.0,0.0,0.0,0.0,0.0,0.0,]
-
-ax.plot(x, y, '-')
-ax.set_ylim([-1.0,6.0])
-
-spans = []  # don't let the garbage collector have your spans!
-
-ax.set_title('Press left mouse button and drag Line region')
-spans.append(
-    SpanSelector(ax, onselectPeak, 'horizontal', useblit=True, rectprops=dict(alpha=0.5, facecolor='red') ))
-
-ax.set_title('Press left mouse button and drag left region of the continuum')
-spans.append(
-    SpanSelector(ax, onselectLeftContinuum, 'horizontal', useblit=True, rectprops=dict(alpha=0.5, facecolor='blue') ))
-
-ax.set_title('Press left mouse button and drag right region of the continuum')
-spans.append(
-    SpanSelector(ax, onselectRightContinuum, 'horizontal', useblit=True, rectprops=dict(alpha=0.5, facecolor='blue') ))
+# set useblit True on gtkagg for enhanced performance
+span = SpanSelector(Ax, onselect, 'horizontal', useblit = True,rectprops=dict(alpha=0.5, facecolor='purple') )
+cursor = widgets.Cursor(Ax, color="red", linewidth = 1, useblit = True)
 
 plt.show()
-
-print "Task Completed"
