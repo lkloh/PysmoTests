@@ -46,6 +46,8 @@ def onselect(xmin, xmax):
     ax2.set_xlim(thisx[0], thisx[-1])
     ax2.set_ylim(thisy.min(), thisy.max())
 
+    print 'limits'
+    print ax2.get_ylim()
 
     Fig.canvas.draw()
 

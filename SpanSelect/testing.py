@@ -5,7 +5,7 @@ from new_one import onselect
 class AcceptanceTests(unittest.TestCase):
 
 	def test_select(self):	
-		instance = onselect(2.9,3.5)
+		instance = onselect(2.9,3.6)
 
 def main():
 	unittest.main()
