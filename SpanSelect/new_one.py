@@ -16,6 +16,7 @@ Fig.set_facecolor('w')
 Fig.set
 Ax = Fig.add_subplot(211)
 
+print type(Ax)
 
 x = np.arange(0.0, 5.0, 0.01)
 y = np.sin(2*np.pi*x) + 0.5*np.random.randn(len(x))
@@ -46,6 +47,10 @@ def onselect(xmin, xmax):
     line2.set_data(thisx, thisy)
     ax2.set_xlim(thisx[0], thisx[-1])
     ax2.set_ylim(thisy.min(), thisy.max())
+
+    # where the limits are set to
+    print thisx[0], thisx[-1]
+    
     Fig.canvas.draw()
 
     RegionIndices.append(xmin)
