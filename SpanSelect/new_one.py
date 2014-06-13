@@ -4,9 +4,6 @@ detail view of the selected region in the lower axes
 copied from http://stackoverflow.com/questions/16947704/graphics-issues-when-combining-matplotlib-widgets-spanselector-cursor-fill-be
 """
 import numpy as np
-# import matplotlib
-# matplotlib.use('TkAgg')
-
 import matplotlib.pyplot as plt
 from matplotlib.widgets import SpanSelector
 import matplotlib.widgets as widgets
