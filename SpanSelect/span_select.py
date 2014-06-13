@@ -5,7 +5,7 @@ matplotlib.use('TkAgg')
 # Qt4Agg
 from numpy import arange, sin, pi
 import matplotlib.pyplot as py
-from matplotlib.widgets import RadioButtons
+from matplotlib.widgets import RadioButtons, SpanSelector
 # http://stackoverflow.com/questions/23167424/matplotlib-button-color-updates-only-after-moving-mouse
 
 class SetUp:
@@ -34,6 +34,11 @@ class SetUp:
 		self.cidchange = self.bnchange.on_clicked(self.changed)
 		self.cidpress = self.fig.canvas.mpl_connect('key_press_event', self.on_key)
 		self.cidband = self.bnband.on_clicked(self.getBand)
+
+		span = SpanSelector(self.axs['span_axs'], self.onselect, 'horizontal')
+
+	def onselect(vmin, vmax):
+		print vmin, vmax
 
 	def getBand(self, event):
 		print 'Ducks want food!'
