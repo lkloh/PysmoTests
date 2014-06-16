@@ -8,8 +8,8 @@ import matplotlib.pyplot as py
 
 
 originalTime = np.arange(-200,200,0.25)
-#originalSignalTime= 4*np.sin(originalTime/2) + 2.4*np.cos(originalTime*8) + 5*np.cos(originalTime*2)
-originalSignalTime= 4*np.sin(originalTime*4) 
+originalSignalTime= 4*np.sin(originalTime/2) + 2.4*np.cos(originalTime*8) + 5*np.cos(originalTime*2)
+#originalSignalTime= 4*np.sin(originalTime*4) 
 
 # plot original signal-vs-time
 fig = py.figure()
@@ -24,8 +24,8 @@ originalFreq = np.fft.fftfreq(len(originalSignalTime), 0.25)
 
 nyq = 1.0/(2*0.25)
 
-flo = 0.4/(nyq)
-fhi = 0.8/(nyq)
+flo = 1.0/(nyq)
+fhi = 1.5/(nyq)
 Wn = [flo, fhi]
 
 B, A = signal.butter(2, Wn ,btype='bandpass')
