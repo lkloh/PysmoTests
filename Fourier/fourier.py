@@ -1,7 +1,11 @@
 
 import numpy as np
-import matplotlib.pyplot as py
 from scipy import signal
+
+import matplotlib
+matplotlib.rcParams['backend'] = "TkAgg"
+import matplotlib.pyplot as py
+
 
 originalTime = np.arange(-200,200,0.25)
 #originalSignalTime= 4*np.sin(originalTime/2) + 2.4*np.cos(originalTime*8) + 5*np.cos(originalTime*2)
