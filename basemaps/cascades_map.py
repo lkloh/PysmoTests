@@ -1,33 +1,47 @@
-"""copied from http://matplotlib.org/basemap/users/lcc.html"""
 import matplotlib
 matplotlib.rcParams['backend'] = "TkAgg"
 
-from mpl_toolkits.basemap import Basemap
-import numpy as np
 import matplotlib.pyplot as plt
-# setup lambert conformal basemap.
-# lat_1 is first standard parallel.
-# lat_2 is second standard parallel (defaults to lat_1).
-# lon_0,lat_0 is central point.
-# rsphere=(6378137.00,6356752.3142) specifies WGS4 ellipsoid
-# area_thresh=1000 means don't plot coastline features less
-# than 1000 km^2 in area.
-m = Basemap(width=12000000,height=9000000,
-            rsphere=(6378137.00,6356752.3142),\
-            resolution='l',area_thresh=1000.,projection='lcc',\
-            lat_1=45.,lat_2=55,lat_0=50,lon_0=-107.)
-m.drawcoastlines()
-m.fillcontinents(color='coral',lake_color='aqua')
-# draw parallels and meridians.
-m.drawparallels(np.arange(-80.,81.,20.))
-m.drawmeridians(np.arange(-180.,181.,20.))
-m.drawmapboundary(fill_color='aqua')
-# draw tissot's indicatrix to show distortion.
-ax = plt.gca()
-# for y in np.linspace(m.ymax/20,19*m.ymax/20,9):
-#     for x in np.linspace(m.xmax/20,19*m.xmax/20,12):
-#         lon, lat = m(x,y,inverse=True)
-#         poly = m.tissot(lon,lat,1.5,100,\
-#                         facecolor='green',zorder=10,alpha=0.5)
-plt.title("Lambert Conformal Projection")
+from mpl_toolkits.basemap import Basemap
+
+"""
+Equatorial/Polar minor radii for WGS84 ellipsoid
+approximation of the geoid
+"""
+rEquat = 6378137.00
+rPolar = 6356752.3142
+"""
+Standard latitudes for LCC projection.  Used in this
+projection by Australia's BoM.
+"""
+trueLat1 = -10.
+trueLat2 = -40.
+
+"""
+lower-left/upper-right corners for the Australian domain.
+"""
+ozMinLat = -43.575
+ozMinLon = 112.925
+ozMaxLat = -10.075
+ozMaxLon = 153.575
+
+"""
+Central lat/lon coordinates.
+"""
+centerLat = 0.5 * (ozMinLat + ozMaxLat)
+centerLon = 0.5 * (ozMinLon + ozMaxLon)
+
+"""
+CASE 1:
+BoM's projection parameters.  Cuts off W. edge of 
+WA and N end of Cape York Peninsula.
+"""
+m = Basemap(llcrnrlon=ozMinLon, llcrnrlat=ozMinLat, 
+            urcrnrlon=ozMaxLon, urcrnrlat= ozMaxLat,
+            resolution='c',
+            area_thresh=1000.,projection='lcc',
+            lat_1=trueLat1, lat_2=trueLat2, 
+            lat_0=centerLat, lon_0=centerLon)
+
+m.drawcoastlines()            
 plt.show()
