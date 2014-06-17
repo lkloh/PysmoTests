@@ -8,6 +8,13 @@ import matplotlib.pyplot as plt
 # lat_1 is first standard parallel.
 # lat_2 is second standard parallel.
 # lon_0,lat_0 is central point.
+
+"""copied from http://matplotlib.org/basemap/users/aea.html"""
+
+
+
+
+
 m = Basemap(width=8000000,height=7000000,
             resolution='l',projection='aea',\
             lat_1=40.,lat_2=60,lon_0=35,lat_0=50)
