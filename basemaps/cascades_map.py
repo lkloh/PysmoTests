@@ -20,10 +20,10 @@ trueLat2 = -40.
 """
 lower-left/upper-right corners for the Australian domain.
 """
-ozMinLat = -43.575
-ozMinLon = 112.925
-ozMaxLat = -10.075
-ozMaxLon = 153.575
+ozMinLat = 40
+ozMinLon = -123
+ozMaxLat = 47
+ozMaxLon = -120
 
 """
 Central lat/lon coordinates.
@@ -39,9 +39,10 @@ WA and N end of Cape York Peninsula.
 m = Basemap(llcrnrlon=ozMinLon, llcrnrlat=ozMinLat, 
             urcrnrlon=ozMaxLon, urcrnrlat= ozMaxLat,
             resolution='c',
-            area_thresh=1000.,projection='lcc',
+            area_thresh=100.,projection='lcc',
             lat_1=trueLat1, lat_2=trueLat2, 
             lat_0=centerLat, lon_0=centerLon)
-
+m.drawstates()
+m.drawcountries()
 m.drawcoastlines()            
 plt.show()
