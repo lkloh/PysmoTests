@@ -44,5 +44,7 @@ m = Basemap(llcrnrlon=ozMinLon, llcrnrlat=ozMinLat,
             lat_0=centerLat, lon_0=centerLon)
 m.drawstates()
 m.drawcountries()
-m.drawcoastlines()            
+m.drawcoastlines()      
+m.drawmapboundary(fill_color='#99ffff')
+m.fillcontinents(color='#cc9966',lake_color='#99ffff')      
 plt.show()
