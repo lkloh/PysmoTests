@@ -5,12 +5,12 @@ import matplotlib.pyplot as plt
 from mpl_toolkits.basemap import Basemap
 
 """
-lower-left/upper-right corners for the Australian domain.
+lower-left/upper-right corners for the cascades domain.
 """
-ozMinLat = 40
-ozMinLon = -123
-ozMaxLat = 47
-ozMaxLon = -120
+minLat = 40
+minLon = -123
+maxLat = 47
+maxLon = -120
 
 """
 Central lat/lon coordinates.
@@ -19,8 +19,8 @@ centerLat = 0.5 * (ozMinLat + ozMaxLat)
 centerLon = 0.5 * (ozMinLon + ozMaxLon)
 
 """make the basemap for cascades region"""
-m = Basemap(llcrnrlon=ozMinLon, llcrnrlat=ozMinLat, 
-            urcrnrlon=ozMaxLon, urcrnrlat= ozMaxLat,
+m = Basemap(llcrnrlon=minLon, llcrnrlat=minLat, 
+            urcrnrlon=maxLon, urcrnrlat= maxLat,
             resolution='c',
             area_thresh=100.,projection='lcc',
             lat_0=centerLat, lon_0=centerLon)
