@@ -18,11 +18,7 @@ Central lat/lon coordinates.
 centerLat = 0.5 * (ozMinLat + ozMaxLat)
 centerLon = 0.5 * (ozMinLon + ozMaxLon)
 
-"""
-CASE 1:
-BoM's projection parameters.  Cuts off W. edge of 
-WA and N end of Cape York Peninsula.
-"""
+"""make the basemap for cascades region"""
 m = Basemap(llcrnrlon=ozMinLon, llcrnrlat=ozMinLat, 
             urcrnrlon=ozMaxLon, urcrnrlat= ozMaxLat,
             resolution='c',
