@@ -1,7 +1,7 @@
 import matplotlib
 matplotlib.rcParams['backend'] = "TkAgg"
 
-import matplotlib.pyplot as plt
+import matplotlib.pyplot as py
 from mpl_toolkits.basemap import Basemap
 
 """
@@ -15,8 +15,8 @@ maxLon = -120
 """
 Central lat/lon coordinates.
 """
-centerLat = 0.5 * (ozMinLat + ozMaxLat)
-centerLon = 0.5 * (ozMinLon + ozMaxLon)
+centerLat = 0.5 * (minLat + maxLat)
+centerLon = 0.5 * (minLon + maxLon)
 
 """make the basemap for cascades region"""
 m = Basemap(llcrnrlon=minLon, llcrnrlat=minLat, 
@@ -31,4 +31,9 @@ m.drawcoastlines()
 m.drawmapboundary(fill_color='#99ffff')
 m.fillcontinents(color='#cc9966',lake_color='#99ffff')   
 
-plt.show()
+"""attempt to plot pointshere"""
+m.scatter(-122, 45, s=50, color='k', latlon=True)   
+
+
+"""show the map"""
+py.show()
