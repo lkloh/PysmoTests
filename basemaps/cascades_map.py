@@ -27,12 +27,12 @@ m = Basemap(llcrnrlon=minLon, llcrnrlat=minLat,
 
 m.drawstates()
 m.drawcountries()
-m.drawcoastlines()      
-#m.drawmapboundary(fill_color='#99ffff')
-#m.fillcontinents(color='#cc9966', lake_color='#99ffff')   
+m.drawcoastlines()        
 
 """attempt to plot pointshere"""
 m.scatter(-122, 45, s=50, color='k', latlon=True)   
+
+m.drawmapboundary(fill_color='#99ffff')
 
 """show the map"""
 py.show()
