@@ -5,19 +5,6 @@ import matplotlib.pyplot as plt
 from mpl_toolkits.basemap import Basemap
 
 """
-Equatorial/Polar minor radii for WGS84 ellipsoid
-approximation of the geoid
-"""
-rEquat = 6378137.00
-rPolar = 6356752.3142
-"""
-Standard latitudes for LCC projection.  Used in this
-projection by Australia's BoM.
-"""
-trueLat1 = -10.
-trueLat2 = -40.
-
-"""
 lower-left/upper-right corners for the Australian domain.
 """
 ozMinLat = 40
@@ -40,11 +27,12 @@ m = Basemap(llcrnrlon=ozMinLon, llcrnrlat=ozMinLat,
             urcrnrlon=ozMaxLon, urcrnrlat= ozMaxLat,
             resolution='c',
             area_thresh=100.,projection='lcc',
-            lat_1=trueLat1, lat_2=trueLat2, 
             lat_0=centerLat, lon_0=centerLon)
+
 m.drawstates()
 m.drawcountries()
 m.drawcoastlines()      
 m.drawmapboundary(fill_color='#99ffff')
-m.fillcontinents(color='#cc9966',lake_color='#99ffff')      
+m.fillcontinents(color='#cc9966',lake_color='#99ffff')   
+
 plt.show()
