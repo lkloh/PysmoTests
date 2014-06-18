@@ -30,9 +30,15 @@ m.drawcountries()
 m.drawcoastlines()        
 
 """attempt to plot pointshere"""
-m.scatter(-122, 45, s=50, color='k', latlon=True)   
+lat_pts = [42,44,45,43,46.5,46,41]
+lon_pts = [-120.5,-121.5,-120,-122.5,-122.9,-121.2,-120.1]
+data_pts = [-34,-30,23,34,-45,-1,12]
 
-m.drawmapboundary(fill_color='#99ffff')
+for i in xrange(len(lat_pts)):
+	m.scatter(-122, 45, s=50, color='k', latlon=True)   
+
+
+#m.drawmapboundary(fill_color='#99ffff')
 
 """show the map"""
 py.show()
