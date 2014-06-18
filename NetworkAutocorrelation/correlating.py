@@ -20,5 +20,8 @@ for i in xrange(numPts):
 	for j in xrange(numPts):
 		vec_i = fakeSignal[i,:]
 		vec_j = fakeSignal[j,:]
-		autocorrelations[i,j] = np.correlate(vec_i, vec_j, mode='full')
+		ccf = np.corrcoef(vec_i, vec_j)
+		autocorrelations[i,j]=ccf[1,0]
+
+print autocorrelations
 
