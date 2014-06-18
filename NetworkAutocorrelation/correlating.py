@@ -9,7 +9,7 @@ for j in range(20,30):
 for j in range(0,19):
 	fakeSignal[j,:] = -fakeSignal[j,:]
 
-print fakeSignal
+#print fakeSignal
 
 """compute correlations"""
 numPts = len(fakeSignal)
@@ -23,5 +23,8 @@ for i in xrange(numPts):
 		ccf = np.corrcoef(vec_i, vec_j)
 		autocorrelations[i,j]=ccf[1,0]
 
-print autocorrelations
-
+"""computer median absolute deviation (MAD)"""
+reshaped_autocorrelations = autocorrelations.reshape(numPts*numPts,1)
+median1 = np.median(reshaped_autocorrelations)
+MAD = np.median(reshaped_autocorrelations-median1)
+print MAD
