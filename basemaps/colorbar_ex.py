@@ -34,6 +34,9 @@ fig, ax = plt.subplots()
 data2 = np.clip(randn(250, 250), -1, 1)
 
 cax = ax.imshow(data2, interpolation='nearest', cmap=cm.afmhot)
+
+print cax
+
 ax.set_title('Gaussian noise with horizontal colorbar')
 
 cbar = fig.colorbar(cax, ticks=[-1, 0, 1], orientation='horizontal')
