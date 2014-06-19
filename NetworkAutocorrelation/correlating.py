@@ -66,7 +66,7 @@ def detect_window_pairs(autocorrelations, threshold):
 	for i in xrange(numPts):
 		for j in xrange(numPts):
 			if autocorrelations[i,j] >= threshold:
-				windowPairsDetected = 1
+				windowPairsDetected[i,j] = 1
 				print 'Detected possible window event'
 	return windowPairsDetected
 
@@ -86,6 +86,8 @@ def get_candidate_events(windowPairsDetected, windows_array):
 				break
 
 candidate_events = get_candidate_events(windowPairsDetected, fakeSignalA)
+
+print 'candidate event windows: '
 print candidate_events
 
 """
