@@ -3,11 +3,20 @@ np.set_printoptions(threshold=np.nan)
 
 """made groups
    40: # windows available
-   7: # points in each window
+   20: # points in each window
 """
-fakeSignalA = np.random.rand(40,7)
-fakeSignalB = np.random.rand(40,7)
-fakeSignalC = np.random.rand(40,7)
+
+delta = 0.5
+window = 3
+overlap = 1
+
+totalDataPoints = 40
+numPointsInWindow = int(window/delta)
+numPointsInOverlap = int(overlap/delta)
+
+fakeSignalA = np.random.rand(totalDataPoints,numPointsInWindow)
+fakeSignalB = np.random.rand(totalDataPoints,numPointsInWindow)
+fakeSignalC = np.random.rand(totalDataPoints,numPointsInWindow)
 
 #print fakeSignal
 
@@ -83,7 +92,7 @@ def get_candidate_events(windowPairsDetected, windows_array):
 			if detection_row[j]:
 				num_events = num_events+1
 				break
-	candidate_events = np.zeros(shape=(num_events, 7))
+	candidate_events = np.zeros(shape=(num_events, numPointsInWindow))
 
 	# save windows with events
 	counter = 0
@@ -100,6 +109,15 @@ def get_candidate_events(windowPairsDetected, windows_array):
 candidate_events_A = get_candidate_events(windowPairsDetected, fakeSignalA)
 candidate_events_B = get_candidate_events(windowPairsDetected, fakeSignalB)
 candidate_events_C = get_candidate_events(windowPairsDetected, fakeSignalC)
+
+"""processing candidate events more
+   take the middle bits only
+"""
+middle_num_seconds = 5
+def get_middle_candidate_events(candidate_events, num_original, num_kept):
+	pass
+
+#truncate_candidate_events_A = get_middle_candidate_events(candidate_events_A, 7, middle_num_seconds)
 
 """
    apply waveform cross-correlation 1
