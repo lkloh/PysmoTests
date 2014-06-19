@@ -53,12 +53,11 @@ def detect_window_pairs(autocorrelations, threshold):
 		for j in xrange(numPts):
 			if autocorrelations[i,j]>threshold:
 				windowPairsDetected = 1
-				print 'YOLO'
 	return windowPairsDetected
 
 
 windowPairsDetected = detect_window_pairs(autocorrelations, DetectionThreshold)
-print windowPairsDetected
+
 
 
 
