@@ -107,7 +107,11 @@ candidate_events_C = get_candidate_events(windowPairsDetected, fakeSignalC)
 waveform_cc_A = get_correlations(candidate_events_A)
 waveform_cc_B = get_correlations(candidate_events_B)
 waveform_cc_C = get_correlations(candidate_events_C)
+waveform_cc_all = waveform_cc_A + waveform_cc_B + waveform_cc_C
 
+waveform_windowPairsDetected = detect_window_pairs(waveform_cc_all, 2)
+
+print waveform_windowPairsDetected
 
 
 
