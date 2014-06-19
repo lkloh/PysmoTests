@@ -84,6 +84,7 @@ def get_candidate_events(windowPairsDetected, windows_array):
 				candidate_events.append(windows_array[i,:])
 				print windows_array[i,:]
 				break
+	return candidate_events
 
 candidate_events = get_candidate_events(windowPairsDetected, fakeSignalA)
 
