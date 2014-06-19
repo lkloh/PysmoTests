@@ -38,8 +38,9 @@ autocorrelationsA = get_autocorrelations(fakeSignalA)
 autocorrelationsB = get_autocorrelations(fakeSignalB)
 autocorrelationsC = get_autocorrelations(fakeSignalC)
 
-"""computer median absolute deviation (MAD)"""
-
+"""computed median absolute deviation (MAD)
+   formula here: http://en.wikipedia.org/wiki/Median_absolute_deviation
+"""
 def compute_median_absolute_deviation(autocorrelations):
 	numPts = len(autocorrelations)
 	reshaped_autocorrelations = autocorrelations.reshape(numPts*numPts,1)
@@ -50,9 +51,8 @@ def compute_median_absolute_deviation(autocorrelations):
 # sum all of them
 network_correlation_coefficient = autocorrelationsA+autocorrelationsB+autocorrelationsC
 MAD = compute_median_absolute_deviation(network_correlation_coefficient)
-
-
 print 'MAD: %f' % MAD
+
 """detect and store window pairs 5 times above MAD
    window pairs with respect to original
 
@@ -61,15 +61,16 @@ print 'MAD: %f' % MAD
    rows: for that column, correspond to the windows other than itself where the correlation value exceeds the detection threshold
 """
 def detect_window_pairs(autocorrelations, threshold):
+	print 'threshold: %f' % threshold
 	windowPairsDetected = np.zeros(shape=(numPts, numPts))
-	autocorrelations = np.zeros(shape=(numPts, numPts))
 	for i in xrange(numPts):
 		for j in xrange(numPts):
-			if autocorrelations[i,j]>threshold:
+			if autocorrelations[i,j] >= threshold:
 				windowPairsDetected = 1
+				print 'Detected possible window event'
 	return windowPairsDetected
 
-windowPairsDetected = detect_window_pairs(network_correlation_coefficient, 5*MAD)
+windowPairsDetected = detect_window_pairs(network_correlation_coefficient, 3*MAD)
 
 """save all window pairs as candidate events"""
 def get_candidate_events(windowPairsDetected, windows_array):
