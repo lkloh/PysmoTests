@@ -11,32 +11,29 @@ fakeSignalC = np.random.rand(40,7)
 
 #print fakeSignal
 
-"""compute correlations"""
-numPts = len(fakeSignalA)
-
-"""
+"""compute correlations
   @autocorrelations: numPts x numPts array
       columns: correspond to the individual windows
       rows: correspond to the autocorrelations for that particular window at the row number i, and the rest of the windows
             NaN value for a window and itself. 
-
 """
-def get_autocorrelations(data):
-	autocorrelations = np.zeros(shape=(numPts, numPts))
+def get_correlations(data):
+	numPts = len(data)
+	all_correlations = np.zeros(shape=(numPts, numPts))
 	for i in xrange(numPts):
 		current_comparison = data[i,:]
 		for j in xrange(numPts):
 			if i==j: #do not check for 
-				autocorrelations[i,i] = np.nan
+				all_correlations[i,i] = np.nan
 			else:
 				vec_j = data[j,:]
 				ccp = np.corrcoef(current_comparison, vec_j)
-				autocorrelations[i,j] = ccp[0,1]
-	return autocorrelations
+				all_correlations[i,j] = ccp[0,1]
+	return all_correlations
 
-autocorrelationsA = get_autocorrelations(fakeSignalA)
-autocorrelationsB = get_autocorrelations(fakeSignalB)
-autocorrelationsC = get_autocorrelations(fakeSignalC)
+autocorrelationsA = get_correlations(fakeSignalA)
+autocorrelationsB = get_correlations(fakeSignalB)
+autocorrelationsC = get_correlations(fakeSignalC)
 
 """computed median absolute deviation (MAD)
    formula here: http://en.wikipedia.org/wiki/Median_absolute_deviation
@@ -58,10 +55,12 @@ print 'MAD: %f' % MAD
 
    @windowPairsDetected: numPts x numPts array
    columns: correspond to individual windows
-   rows: for that column, correspond to the windows other than itself where the correlation value exceeds the detection threshold
+   rows: for that column, correspond to the windows other than itself where the 
+         correlation value exceeds the detection threshold
 """
 def detect_window_pairs(autocorrelations, threshold):
 	print 'threshold: %f' % threshold
+	numPts = len(autocorrelations)
 	windowPairsDetected = np.zeros(shape=(numPts, numPts))
 	for i in xrange(numPts):
 		for j in xrange(numPts):
@@ -74,6 +73,7 @@ windowPairsDetected = detect_window_pairs(network_correlation_coefficient, 3*MAD
 
 """save all window pairs as candidate events"""
 def get_candidate_events(windowPairsDetected, windows_array):
+	numPts = len(windowPairsDetected)
 	candidate_events = []
 	for i in xrange(numPts):
 		detection_row = windowPairsDetected[i,:]
@@ -86,15 +86,16 @@ def get_candidate_events(windowPairsDetected, windows_array):
 				break
 	return candidate_events
 
-candidate_events = get_candidate_events(windowPairsDetected, fakeSignalA)
+candidate_events_A = get_candidate_events(windowPairsDetected, fakeSignalA)
 
 print 'candidate event windows: '
-print candidate_events
+print candidate_events_A
 
 """
-   apply waveform cross-correlation
-
+   apply waveform cross-correlation 1
 """
+waveform_cc_A = get_correlations(candidate_events_A)
+print waveform_cc_A
 
 
 
