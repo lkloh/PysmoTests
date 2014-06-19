@@ -40,6 +40,7 @@ autocorrelationsC = get_autocorrelations(fakeSignalC)
 """computer median absolute deviation (MAD)"""
 
 def compute_median_absolute_deviation(autocorrelations):
+	numPts = len(autocorrelations)
 	reshaped_autocorrelations = autocorrelations.reshape(numPts*numPts,1)
 	median1 = np.median(reshaped_autocorrelations)
 	MAD = np.median(reshaped_autocorrelations-median1)
@@ -65,7 +66,7 @@ def detect_window_pairs(autocorrelations, threshold):
 				windowPairsDetected = 1
 	return windowPairsDetected
 
-windowPairsDetected = detect_window_pairs(network_correlation_coefficient, MAD)
+windowPairsDetected = detect_window_pairs(network_correlation_coefficient, 5*MAD)
 
 """save all window pairs as candidate events"""
 def get_candidate_events(windowPairsDetected, windows_array):
@@ -76,7 +77,8 @@ def get_candidate_events(windowPairsDetected, windows_array):
 		for j in xrange(numPts):
 			if detection_row[j]:
 				has_event = True
-				candidate_events.append(detection_row)
+				candidate_events.append(windows_array[i,:])
+				print 
 				break
 
 candidate_events = get_candidate_events(windowPairsDetected, fakeSignalA)
