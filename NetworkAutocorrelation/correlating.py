@@ -31,7 +31,6 @@ def get_autocorrelations(data):
 autocorrelations = get_autocorrelations(fakeSignal)
 print autocorrelations
 
-
 """computer median absolute deviation (MAD)"""
 reshaped_autocorrelations = autocorrelations.reshape(numPts*numPts,1)
 median1 = np.median(reshaped_autocorrelations)
