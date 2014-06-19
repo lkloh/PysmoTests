@@ -36,4 +36,41 @@ reshaped_autocorrelations = autocorrelations.reshape(numPts*numPts,1)
 median1 = np.median(reshaped_autocorrelations)
 MAD = np.median(reshaped_autocorrelations-median1)
 
-"""detect stuff 8 times above MAD"""
+"""detect and store window pairs 5 times above MAD
+   window pairs with respect to original
+"""
+DetectionThreshold = 5*MAD
+
+"""
+  @windowPairsDetected: numPts x numPts array
+  	columns: correspond to individual windows
+  	rows: for that column, correspond to the windows other than itself where the correlation value exceeds the detection threshold
+"""
+def detect_window_pairs(autocorrelations, threshold):
+	windowPairsDetected = np.zeros(shape=(numPts, numPts))
+	autocorrelations = np.zeros(shape=(numPts, numPts))
+	for i in xrange(numPts):
+		for j in xrange(numPts):
+			if autocorrelations[i,j]>threshold:
+				windowPairsDetected = 1
+				print 'YOLO'
+	return windowPairsDetected
+
+
+windowPairsDetected = detect_window_pairs(autocorrelations, DetectionThreshold)
+print windowPairsDetected
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
