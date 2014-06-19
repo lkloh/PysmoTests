@@ -74,22 +74,32 @@ windowPairsDetected = detect_window_pairs(network_correlation_coefficient, 3*MAD
 """save all window pairs as candidate events"""
 def get_candidate_events(windowPairsDetected, windows_array):
 	numPts = len(windowPairsDetected)
-	candidate_events = []
+	
+	# count number of events
+	num_events = 0
 	for i in xrange(numPts):
 		detection_row = windowPairsDetected[i,:]
-		has_event = False
 		for j in xrange(numPts):
 			if detection_row[j]:
-				has_event = True
-				candidate_events.append(windows_array[i,:])
-				print windows_array[i,:]
+				num_events = num_events+1
+				break
+	candidate_events = np.zeros(shape=(num_events, 7))
+
+	# save windows with events
+	counter = 0
+	for i in xrange(numPts):
+		detection_row = windowPairsDetected[i,:]
+		for j in xrange(numPts):
+			if detection_row[j]:
+				candidate_events[counter,:] = windows_array[i,:]
+				counter=counter+1
 				break
 	return candidate_events
+
 
 candidate_events_A = get_candidate_events(windowPairsDetected, fakeSignalA)
 
 print 'candidate event windows: '
-print candidate_events_A
 
 """
    apply waveform cross-correlation 1
