@@ -66,7 +66,7 @@ def detect_window_pairs(autocorrelations, threshold):
 		for j in xrange(numPts):
 			if autocorrelations[i,j] >= threshold:
 				windowPairsDetected[i,j] = 1
-				print 'Detected possible window event'
+				#print 'Detected possible window event'
 	return windowPairsDetected
 
 windowPairsDetected = detect_window_pairs(network_correlation_coefficient, 3*MAD)
@@ -98,15 +98,15 @@ def get_candidate_events(windowPairsDetected, windows_array):
 
 
 candidate_events_A = get_candidate_events(windowPairsDetected, fakeSignalA)
-
-print 'candidate event windows: '
+candidate_events_B = get_candidate_events(windowPairsDetected, fakeSignalB)
+candidate_events_C = get_candidate_events(windowPairsDetected, fakeSignalC)
 
 """
    apply waveform cross-correlation 1
 """
 waveform_cc_A = get_correlations(candidate_events_A)
-print waveform_cc_A
-
+waveform_cc_B = get_correlations(candidate_events_B)
+waveform_cc_C = get_correlations(candidate_events_C)
 
 
 
