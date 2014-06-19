@@ -45,9 +45,9 @@ def compute_median_absolute_deviation(autocorrelations):
 	MAD = np.median(reshaped_autocorrelations-median1)
 	return MAD
 
-MAD_A = compute_median_absolute_deviation(autocorrelationsA)
-MAD_B = compute_median_absolute_deviation(autocorrelationsB)
-MAD_C = compute_median_absolute_deviation(autocorrelationsC)
+# sum all of them
+network_correlation_coefficient = autocorrelationsA+autocorrelationsB+autocorrelationsC
+MAD = compute_median_absolute_deviation(network_correlation_coefficient)
 
 """detect and store window pairs 5 times above MAD
    window pairs with respect to original
@@ -65,12 +65,30 @@ def detect_window_pairs(autocorrelations, threshold):
 				windowPairsDetected = 1
 	return windowPairsDetected
 
-windowPairsDetected = detect_window_pairs(autocorrelationsA, MAD_A)
-print windowPairsDetected
+windowPairsDetected = detect_window_pairs(network_correlation_coefficient, MAD)
+
+"""save all window pairs as candidate events"""
+def get_candidate_events(windowPairsDetected, windows_array):
+	candidate_events = []
+	for i in xrange(numPts):
+		detection_row = windowPairsDetected[i,:]
+		has_event = False
+		for j in xrange(numPts):
+			if detection_row[j]:
+				has_event = True
+				candidate_events.append(detection_row)
+				break
+
+candidate_events = get_candidate_events(windowPairsDetected, fakeSignalA)
+print candidate_events
 
 """
-   
+   apply waveform cross-correlation
+
 """
+
+
+
 
 
 
