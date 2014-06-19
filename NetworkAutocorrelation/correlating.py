@@ -1,4 +1,5 @@
 import numpy as np 
+np.set_printoptions(threshold=np.nan)
 
 """made groups
    40: # windows available
@@ -43,13 +44,15 @@ def compute_median_absolute_deviation(autocorrelations):
 	numPts = len(autocorrelations)
 	reshaped_autocorrelations = autocorrelations.reshape(numPts*numPts,1)
 	median1 = np.median(reshaped_autocorrelations)
-	MAD = np.median(reshaped_autocorrelations-median1)
-	return MAD
+	abs_diff = np.abs(reshaped_autocorrelations-median1)
+	return np.median(abs_diff)
 
 # sum all of them
 network_correlation_coefficient = autocorrelationsA+autocorrelationsB+autocorrelationsC
 MAD = compute_median_absolute_deviation(network_correlation_coefficient)
 
+
+print 'MAD: %f' % MAD
 """detect and store window pairs 5 times above MAD
    window pairs with respect to original
 
@@ -78,7 +81,7 @@ def get_candidate_events(windowPairsDetected, windows_array):
 			if detection_row[j]:
 				has_event = True
 				candidate_events.append(windows_array[i,:])
-				print 
+				print windows_array[i,:]
 				break
 
 candidate_events = get_candidate_events(windowPairsDetected, fakeSignalA)
