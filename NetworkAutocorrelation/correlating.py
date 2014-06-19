@@ -111,9 +111,12 @@ waveform_cc_all = waveform_cc_A + waveform_cc_B + waveform_cc_C
 
 waveform_windowPairsDetected = detect_window_pairs(waveform_cc_all, 2)
 
-print waveform_windowPairsDetected
 
+waveform_window_events_A = get_candidate_events(waveform_windowPairsDetected, candidate_events_A)
+waveform_window_events_B = get_candidate_events(waveform_windowPairsDetected, candidate_events_B)
+waveform_window_events_C = get_candidate_events(waveform_windowPairsDetected, candidate_events_C)
 
+print waveform_window_events_A
 
 
 
