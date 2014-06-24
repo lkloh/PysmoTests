@@ -13,5 +13,6 @@ print 'Template:\n'
 print templ
 
 for tr in templ:
+	print 'YOLO'
 	tr.data += np.random.random(len(tr)) * tr.data.max() * 0.5
 	print signal.cross_correlation.templatesMaxSimilarity(st, t, [templ])
