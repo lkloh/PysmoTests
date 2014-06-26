@@ -5,8 +5,11 @@ import matplotlib.pyplot as py
 import numpy as npy
 from numpy.random import rand
 
+# copied from http://matplotlib.org/examples/event_handling/pick_event_demo.html
+
 
 x, y, c, s = rand(4, 100)
+
 def onpick3(event):
     ind = event.ind
     print 'onpick3 scatter:', ind, npy.take(x, ind), npy.take(y, ind)

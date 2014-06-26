@@ -6,6 +6,7 @@ import matplotlib.pyplot as py
 
 
 xs = np.arange(0, np.pi, 0.05)
+print xs
 data = np.sin(xs)
 
 peakind = signal.find_peaks_cwt(data, np.arange(1,10))
