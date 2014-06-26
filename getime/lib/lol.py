@@ -1,0 +1,3 @@
+import getime
+
+print 'lol'
