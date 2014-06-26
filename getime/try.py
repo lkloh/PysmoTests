@@ -28,6 +28,7 @@ xlou 04/30/2011
 
 from numpy import *
 import os, sys
+from lib import lol
 import getime
 
 print 'HELLO WORLD'

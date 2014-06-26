@@ -1,3 +1,5 @@
 import getime
+import numpy as np
 
-print 'lol'
+def lol():
+	print 'LOL'
