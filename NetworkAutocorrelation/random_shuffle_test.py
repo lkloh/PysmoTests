@@ -1,4 +1,5 @@
 import random
+import numpy as np
 
 # taken from http://stackoverflow.com/questions/976882/shuffling-a-list-of-objects-in-python
 
@@ -12,7 +13,14 @@ print a, b, "two list same:", a == b
 a = range(50)
 print 'LIST A:'
 print a
-b = random.sample(a, len(a))
+
+b = range(50)
+lol = b[10:20]
+rand_b = random.sample(lol, len(lol))
+print rand_b
+for i in np.arange(10,20):
+	b[i] = rand_b[i-10]
+
 print 'LIST B:'
 print b
 print "no duplicates:", a == list(set(b))
